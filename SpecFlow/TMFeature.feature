@@ -11,4 +11,16 @@ Scenario: create time and material record with valid data
 	When I create time and material record
 	Then the record should be created successfully
 
+Scenario Outline: edit time and material record with valid data
+	Given I logged into TurnUp portal successfully
+	And I navigate to time and material page
+	When I update '<Description>' on an existing time and material record
+	Then the record should have the updated '<Description>'
+
+	Examples: 
+	| Description |
+	| Feb2022     |
+	| Dog         |
+	| Keyboard    |
+
 
