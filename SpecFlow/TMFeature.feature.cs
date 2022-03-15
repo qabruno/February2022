@@ -76,9 +76,11 @@ namespace February2022.SpecFlow
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("create time and material record with valid data")]
+        [NUnit.Framework.CategoryAttribute("Sanity")]
         public virtual void CreateTimeAndMaterialRecordWithValidData()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "Sanity"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("create time and material record with valid data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
@@ -119,12 +121,19 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("edit time and material record with valid data")]
+        [NUnit.Framework.CategoryAttribute("Regression")]
         [NUnit.Framework.TestCaseAttribute("Feb2022", "abc", "123", null)]
         [NUnit.Framework.TestCaseAttribute("Dog", "def", "45", null)]
         [NUnit.Framework.TestCaseAttribute("Keyboard", "ghi", "7", null)]
         public virtual void EditTimeAndMaterialRecordWithValidData(string description, string code, string price, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "Regression"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("Code", code);
